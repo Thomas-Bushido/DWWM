@@ -1,7 +1,38 @@
+*{
+  width:800px;
+  margin:0 auto;
+  background-color:#efe784;
+}
+
 .logo {
-    margin:;
+    
+    padding: 80px 50px;
     background-image: url(header.jpg);
-    display: inline-block;
-    padding: 100px  200px;
+    background-image: 0 auto;
+    
     }
+ h1 {
+    color: #efe784;
+     text-align: center;
+     background-color: #3e3838;
+     padding-bottom: 20px;
+     padding-top: 20px;
+     border: 1px solid #efe784;
+ }
+
+ .Paragraphe1 {
+    color: black;
+     text-align: center;
+     padding-left: px;
+     background-color: #3e3838;
+    
+    
+
+
+ }
+
+ 
+
+
+
 
