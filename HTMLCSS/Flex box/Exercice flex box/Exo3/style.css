@@ -1,0 +1,107 @@
+#Blue {
+    width: 50%;
+    height: 1000px;
+  margin: 0 auto;
+  background-color: blue;
+    flex-direction: column; 
+   flex-wrap: wrap; 
+   padding:20px 20px;
+   display:flex;
+   justify-content: space-between;
+
+}
+
+#Container1 {
+    display: flex;
+    flex-direction: row; 
+   flex-wrap: wrap;
+   padding: 10px;
+   justify-content: space-between;
+}
+
+#Orange {
+   width: 45%;
+   height: 200px;
+   background-color: orangered;
+   
+}
+
+#Grey {
+    width: 45%;
+   height: 200px;
+   background-color: grey;
+}
+
+#Container2{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+#Yellow {
+    width: 100%;
+    height: 200px;
+    background-color: yellow;
+    
+
+}
+
+#Container3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#Orange1 {
+    width: 20%;
+    height: 100px;
+    background-color: orangered;
+    
+}
+#Orange2 {
+    width: 20%;
+    height: 100px;
+    background-color: orangered;
+}
+#Orange3 {
+    width: 20%;
+    height: 100px;
+    background-color: orangered;
+}
+#Orange4 {
+    width: 20%;
+    height: 100px;
+    background-color: orangered;
+}
+
+
+#Container4 {
+    display: flex;
+    flex-direction: row; 
+   flex-wrap: wrap;
+   padding: 10px;
+   justify-content: space-between;
+
+}
+
+#Yellow1 {
+    width: 45%;
+    height: 200px;
+    background-color: yellow;
+    
+ }
+ 
+ #Yellow2 {
+     width: 45%;
+    height: 200px;
+    background-color: yellow;
+}
+
+#Green {
+    width: 100%;
+    height: 200px;
+    background-color:green;
+    
+}
+

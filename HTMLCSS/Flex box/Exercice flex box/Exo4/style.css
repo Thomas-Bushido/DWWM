@@ -1,0 +1,9 @@
+#Blue {
+    background-color: white;
+    border: blue solid 9px;
+    display: flex;
+    width: 1000px;
+    height: 900px;
+    margin: 0 auto;
+}
+
