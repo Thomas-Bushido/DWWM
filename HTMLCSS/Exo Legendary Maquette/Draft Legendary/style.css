@@ -1,0 +1,29 @@
+
+main{
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+.header {
+    position:relative;
+
+
+}
+
+.logoheader {
+    position:absolute;
+    left: 1000px;
+    top: 110px;
+}
+
+.Bienvenue {
+    position: absolute;
+    top: 250px;
+    left: 1000px;
+    color:yellow;
+    font-size:50px;
+    letter-spacing: 0.5CM;
+    font-weight:lighter;
+
+}

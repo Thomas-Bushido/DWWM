@@ -22,15 +22,20 @@ main{
     padding: 100px 250px;
     background-image: url(header.jpg);
     background-image: 0 auto;
-    
 }
+
+
+
+
+
 h1.INTRO {
   color: #efe784;
    text-align: center;
    background-color: #3e3838;
    padding-bottom: 20px;
    padding-top: 20px;
-   border: 1px solid #efe784;
+   
+   text-decoration:overline underline 1px;
 }
 
  .Paragraphe1 {
@@ -56,6 +61,8 @@ h1.INTRO {
 
   .photo-avengers {
      background-color: white;
+     position: relative;
+     top: -5px;
 
   }
   
