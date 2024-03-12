@@ -1,0 +1,58 @@
+.Container1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+   grid-template-rows: 0.5fr 1fr 1fr 1fr;
+   gap: 10px 10px;
+   height: 900px;
+   
+   }
+
+   div {
+     border: 1px  dotted red;
+   }
+
+
+   .Header {
+      background-color: red;
+      grid-area: 1/1/1/5;
+      /* grid area  :ligne début/ colonne début/ ligne fin / colonne fin  */
+      
+   }
+
+   .sidebar {
+    background-color: red;
+    grid-area: 2/1/4/2;
+    /* grid area ligne début/ colonne début/ ligne fin / colonne fin  */
+  
+
+   }
+
+   .Box1 {
+    background-color: red;
+    
+   }
+
+   .Box2 {
+    background-color: red;
+
+   }
+
+   .Box3 {
+    background-color: red;
+
+   }
+
+   .Maincontent {
+    background-color: red;
+     grid-area: 3/2/4/5;
+        /* grid area :ligne début/ colonne début/ ligne fin / colonne fin  */
+
+   }
+
+   .Footer {
+    background-color: red;
+    grid-area: 4/1/5/5;
+    /* grid area: ligne début/ colonne début/ ligne fin / colonne fin  */
+  
+   }
