@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+    /* transform: rotate(30deg); */
+    /* transition-duration: 2s;  */
+    /* transition-property: background; */
+    /* transition-timing-function: ease-out; */
+    /* transition-property: height 3s ease-out 3s; */
+    /* transition-timing-function: ease-in; */
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation: fadeIn 1s 2s alternate infinite ease-in;
+}
+
+/* .box:hover {
+    background-color: green;
+    height: 800px;
+} */
+
+@keyframes fadeIn {
+    from{
+       opacity: 0;
+       transform: translateY(-20px);
+    }
+    to{
+       opacity: 1;
+       width: 500px;
+    }
+}
