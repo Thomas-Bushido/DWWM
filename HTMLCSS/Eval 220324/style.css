@@ -103,10 +103,10 @@ h1 {
   text-align: center;
   color: #849561;
 }
-.ishibashiFoundation,
-.TheAgeofAnxiety,
-.Apollinairelepoète,
-.Lesfemmesphotographes {
+.ishibashifoundation,
+.theageofanxiety,
+.apollinairelepoète,
+.lesfemmesphotographes {
   background-color: #849561;
   width: 20%;
   height: 80%;
@@ -271,38 +271,127 @@ h2 {
 .Texte1,
 .Texte2 {
   text-align: start;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
 .Bouton1 {
   display: flex;
-  justify-content: space-around;
   position: absolute;
-  bottom: 5%;
-  width: 140px;
+  bottom: 1%;
+  flex-direction: column;
+  width: 200px;
 }
 .Bouton2 {
   display: flex;
-  width: 49px;
+  width: 140px;
   height: 48px;
-  background-color: #393939;
-  justify-content: center;
+  padding-left: 40px;
+  gap: 10px;
   align-items: center;
 }
 .Google {
   background-image: url(BasdePage/Google+.png);
   background-repeat: no-repeat;
   height: 15px;
-  width: 300px;
+  width: 35px;
+  background-color: #393939;
+  border: 1px solid #393939;
+  border-width: 10px;
+  background-position: center;
 }
 .Facebook {
   background-image: url(BasdePage/Facebook.png);
+  background-position: center;
   background-repeat: no-repeat;
   height: 15px;
-  width: 300px;
+  width: 30px;
+  background-color: #393939;
+  border: 1px solid #393939;
+  border-width: 10px;
 }
 .Twitter {
   background-image: url(BasdePage/Twitter.png);
   background-repeat: no-repeat;
   height: 15px;
-  width: 300px;
+  width: 30px;
+  background-position: center;
+  background-color: #393939;
+  border: 1px solid #393939;
+  border-width: 10px;
+}
+@media screen and (max-width: 768px) {
+  .Navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 22px;
+    letter-spacing: 10px;
+    align-items: center;
+  }
+  .Container4 {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: 10% 45% 45%;
+    width: 100%;
+    height: 1269px;
+    gap: 1px;
+    padding-bottom: 5px;
+  }
+  h1 {
+    grid-row: 1/1;
+    grid-column: 1/3;
+    width: 100%;
+    font-size: 30px;
+    margin: 1%;
+    justify-self: center;
+    text-align: center;
+  }
+  .ishibashifoundation,
+  .theageofanxiety,
+  .apollinairelepoète,
+  .lesfemmesphotographes {
+    background-color: #849561;
+    justify-self: center;
+    width: 90%;
+    font-size: 20px;
+  }
+  #BoutonDécouvrir1,
+  #BoutonDécouvrir2,
+  #BoutonDécouvrir3,
+  #BoutonDécouvrir4 {
+    position: relative;
+    top: 25%;
+  }
+  .Container5 {
+    width: 100%;
+    height: 612px;
+  }
+  .Hall {
+    width: 100%;
+    height: 612px;
+  }
+  .Cloche {
+    background-repeat: no-repeat;
+    width: 3.2%;
+    height: 16.6%;
+    justify-content: center;
+    position: relative;
+    top: 5%;
+    left: 48.4%;
+    border: 1px solid white;
+  }
+  .Installation {
+    color: white;
+    font-size: 27px;
+    font-weight: lighter;
+    position: relative;
+    top: 4%;
+    left: 35.4%;
+  }
+  .Texte {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 20px 300px 20px 300px;
+    font-size: 22px;
+  }
 }
