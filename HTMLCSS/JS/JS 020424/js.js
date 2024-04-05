@@ -102,7 +102,7 @@ else {(age < 18)
 }
 
 // Correction 1:
-fonction determinerage(age){
+function determinerage(age){
      if (age >= 18) {
           console.log("la personne est majeur")
      }
@@ -110,7 +110,7 @@ fonction determinerage(age){
           console.log("la personne est mineur");
      }
 }
-determinage(10)
+
 
 //Exercice 2
 for (let i = 2; i < 20; i += 2) {
@@ -150,10 +150,5 @@ while (inputUser != randomNumber){
     }
 
 }
-// Exercice 4
-let function mois() {
 
-case 1: janvier:
-case 2: février;
-}
 
