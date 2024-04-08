@@ -1,0 +1,112 @@
+
+:root {
+    --font-size:1rem;
+  }
+
+
+/* Reset */
+* {
+    box-sizing:border-box; 
+    outline:none;
+    margin:0;
+    padding:0;
+  }
+  ul {
+    list-style:none;
+  }
+
+  /* Basic style */
+body {
+    margin:0;
+    /* font-size:50px; */
+    font-family:'Times New Roman', Times, serif
+  }
+  .main-content {
+    padding:1rem;
+  }
+
+  #Accueil {
+    display: block;
+    font-size:50px;
+  }
+
+  #ReadyFight {  
+    font-size:50px;
+    display:none;
+    justify-content:center;
+    
+    
+    padding:50px;
+    font-size:3rem;
+    background:red;
+    color: yellow;
+  }
+
+  .NavbarLinks {
+    display:flex;
+    justify-content: center;
+}
+
+  .LinkSelect, .LinkPerso, .LinkCombat {
+    padding:0 10px;
+
+  }
+     
+
+  #button1, #button2, #button3 { 
+    background-color: aquamarine;
+    font-size: 50px;
+    padding: 5px;
+}
+
+#MenuPlayer {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    justify-self: end;
+    padding: 50px;
+    gap:10px;
+}
+
+.button-clique1 {
+    border:10px solid red;
+}
+.button-clique2 {
+    border:10px solid blue;
+}
+.button-clique3 {
+    border:10px solid white;
+}
+
+#PhotoRocki {
+    background-image: url("./Rockiii.png");
+    width: 420px;
+    height: 350px;
+    border-radius: 20%;
+    
+}
+
+#PhotoPaperman {
+    background-image: url("./Paperman.png");
+    width: 420px;
+    height: 350px;
+    background-position: center;
+    border-radius: 20%;
+}
+
+#PhotoScissorhands {
+    background-image: url("./Scissorhands.png");
+    width: 420px;
+    height: 350px;
+    background-position: center;
+    border-radius: 20%;
+}
+
+.p {
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+   

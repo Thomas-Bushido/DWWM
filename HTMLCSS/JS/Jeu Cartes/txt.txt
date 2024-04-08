@@ -1,0 +1,32 @@
+Ecran d'accueil : start faire disparaitre écran d'accueil pour passer à l'écran de séléction
+Logo/nom de jeu/
+
+Ecran sélection de personnage
+ chaque joueur doit choisir un perso différent
+ bouton pour commencer la partie 
+Ecouteur d'évênement
+
+
+Ecran de combat
+Bouton d'action qui déclenche une attaques
+condition de victoire
+stat des personnages
+
+
+Tout sera sur 1 seul écran
+
+2 joueurs
+choix pseudo
+choix perso 
+validation
+stat
+attaques / capa
+
+comment faire un modal en js (tuto)
+emplacement des personnages
+emplacement des actions
+1V1
+
+
+
+notion: websocket 
