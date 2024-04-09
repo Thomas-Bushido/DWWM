@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
 :root {
     --font-size:1rem;
   }
@@ -10,6 +12,8 @@
     outline:none;
     margin:0;
     padding:0;
+    font-family: "MedievalSharp", cursive;
+    
   }
   ul {
     list-style:none;
@@ -19,36 +23,76 @@
 body {
     margin:0;
     /* font-size:50px; */
-    font-family:'Times New Roman', Times, serif
+    background-color: black;
+    
+    
   }
   .main-content {
     padding:1rem;
   }
 
   #Accueil {
+
+    margin: 0 auto;
     display: block;
     font-size:50px;
+    background-image: url(./fonddécranaccueil.png);
+    
+    width: 1740px;
+    height: 904px;
   }
+
+  #Titre{
+    text-align: center;
+    color:brown;
+    font-size: 150px;
+    
+  }
+
+  #Startbutton {
+    position: absolute;
+    top: 910px;
+    left: 1100px;
+    width: 200px;
+    height: 150px;
+    font-size: 50px;
+    font-weight: bolder;
+    background-image: url(./Fondécranstartbutton.png);
+
+  }
+
+
+
 
   #ReadyFight {  
     font-size:50px;
     display:none;
     justify-content:center;
-    
-    
+    align-items: center;
+    width: 1231;
+    height: 1200px;
     padding:50px;
     font-size:3rem;
-    background:red;
+    background-image: url(./MenuNavbar1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
     color: yellow;
   }
 
+ 
+
   .NavbarLinks {
     display:flex;
+    align-items: center;
     justify-content: center;
+    background: transparent
+    
 }
 
   .LinkSelect, .LinkPerso, .LinkCombat {
     padding:0 10px;
+ 
 
   }
      
@@ -57,56 +101,120 @@ body {
     background-color: aquamarine;
     font-size: 50px;
     padding: 5px;
+    
 }
 
 #MenuPlayer {
     display: none;
+    height: 1000px;
     justify-content: space-between;
+    text-align: center;
     align-items: center;
     flex-direction: row;
     justify-self: end;
     padding: 50px;
     gap:10px;
+    color:yellow;
+    font-weight: bolder;
+    font-size: 16px;
+    
+}
+
+.Pierre {
+  background-color: grey;
+  border-radius: 9%;
+}
+.Feuille {
+  background-color:green;
+  border-radius: 9%;
+}
+
+.ciseaux {
+  background-color:blue;
+  border-radius: 9%;
 }
 
 .button-clique1 {
     border:10px solid red;
+    
 }
 .button-clique2 {
-    border:10px solid blue;
+  
+    border:10px solid green;
 }
 .button-clique3 {
-    border:10px solid white;
+  
+  border:10px solid blue;
 }
 
+
 #PhotoRocki {
-    background-image: url("./Rockiii.png");
+    background-image: url("./Rémy.png");
     width: 420px;
     height: 350px;
-    border-radius: 20%;
+    
     
 }
 
 #PhotoPaperman {
-    background-image: url("./Paperman.png");
+    background-image: url("./Gaetan.png");
     width: 420px;
     height: 350px;
     background-position: center;
-    border-radius: 20%;
+    
 }
 
 #PhotoScissorhands {
-    background-image: url("./Scissorhands.png");
+    background-image: url("./Marvin.png");
     width: 420px;
     height: 350px;
     background-position: center;
-    border-radius: 20%;
+    
 }
 
-.p {
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    font-size: 10px;
-}
+
    
+#Commencer {
+    width: 100%;
+    height: 50%;
+    flex-direction: column;
+    position: absolute;
+    top: 900px;
+    left: 34%;
+}
+
+#boutonCommencer {
+
+  background-color: aquamarine;
+    font-size: 50px;
+    
+    padding: 5px;
+    align-self: flex-end;
+    justify-self: center;
+}
+
+#Choixpseudo {
+  display: none;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 600px; /* Ajustez la largeur selon vos besoins */
+  height: 300px;
+  margin: 0 auto; /* Centrer horizontalement */
+  margin-top: 100px; /* Espacement du haut, ajustez selon vos besoins */
+
+}
+
+#formulaire {
+   font-size: 40px;
+   text-align: center;
+   padding-top: 30px;
+}
+
+#Submit {
+    position: absolute;
+    font-size: 50px;
+    top: 500px;
+    left: 490px;
+  }
