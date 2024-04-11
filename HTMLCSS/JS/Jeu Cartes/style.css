@@ -70,7 +70,7 @@ body {
     justify-content:center;
     align-items: center;
     width: 1231;
-    height: 1200px;
+    height: 1000px;
     padding:50px;
     font-size:3rem;
     background-image: url(./MenuNavbar1.png);
@@ -106,7 +106,7 @@ body {
 
 #MenuPlayer {
     display: none;
-    height: 1000px;
+    height: 800px;
     justify-content: space-between;
     text-align: center;
     align-items: center;
@@ -120,18 +120,26 @@ body {
     
 }
 
+
+
 .Pierre {
   background-color: grey;
   border-radius: 9%;
+  width: 420px;
+  height: 520px;
 }
 .Feuille {
   background-color:green;
   border-radius: 9%;
+  width: 420px;
+  height: 520px;
 }
 
 .ciseaux {
   background-color:blue;
   border-radius: 9%;
+  width: 420px;
+  height: 520px;
 }
 
 .button-clique1 {
@@ -218,3 +226,149 @@ body {
     top: 500px;
     left: 490px;
   }
+
+  #PageCombat {
+    
+    display: none;
+    height: 1200px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 10% 40% 30% 20%;
+    text-align: center;
+    justify-content: start;
+    background-image: url(./photoarene.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    
+    padding: 50px;
+    gap:10px;
+    color: red;
+    background-color: #fff;
+    font-weight: bolder;
+    font-size: 70px;
+    
+  }
+
+
+
+#Combattez {
+  grid-column: 2/2;
+  grid-row: 1/1;
+
+}
+
+#CaseJoueur1 {
+  display: grid;
+   grid-column: 1/1;
+   grid-row:2/2;
+   
+  }
+
+#pseudoOutput {
+  
+}
+
+#Pierrejoueur, #Feuillejoueur, #Couteaujoueur {
+  display: none;
+  font-size: 60px;
+  align-self: end;
+  text-align:center;
+  height:220px ;
+  text-decoration: 1px solid red;
+}
+
+#Pierrejoueur {
+  background-image: url(./Rémy.png);
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+#Feuillejoueur {
+  background-image: url(./Gaetan.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#Couteaujoueur {
+  background-image: url(./Marvin.png);
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+
+#Adversaire {
+  display: grid;
+   grid-column: 3/3;
+   grid-row: 2/2;
+  
+}
+
+#Pierre, #Feuille, #Couteau {
+  display: none;
+  font-size: 60px;
+}
+
+#Lancez {
+  width: 50%;
+  height: 50%;
+  justify-self: center;
+  align-self: center;
+  grid-column: 1/1;
+  grid-row:3/3;
+  font-size: 30px;
+  color:white;
+  font-weight: bolder;
+  background-image: url(./Fondécranstartbutton.png);
+
+}
+
+#Pierre {
+  
+  background-image: url(./Rémy.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#Feuille {
+  background-image: url(./Gaetan.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#Couteau {
+  background-image: url(./Marvin.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+#txt {
+  position: relative;
+  top: -80px;
+}
+
+
+
+#Arene {
+  grid-column: 2/2;
+  grid-row:2/2;
+  align-self: center;
+
+}
+
+#Win, #Loose, #Egalité{
+  display: none; 
+  color: yellow;
+  grid-column: 2/2;
+  grid-row:2/2;
+}
+
+#pseudoOutput {
+  color: black;
+}
+
+
+
+

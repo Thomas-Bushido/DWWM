@@ -22,7 +22,7 @@
                 <ul class="NavbarLinks">
                     <li class="LinkSelect"><button id="button1">Choisis ton pseudo</button></li>
                     <li class="LinkPerso"><button id="button2">Sélectionne ton personnage</button></li>
-                    <li class="LinkCombat"><button id="button3">Affronte ton adversaire</button></li>
+                    
                 </ul>
 
             </nav>
@@ -31,62 +31,82 @@
     <div id="Choixpseudo">
         <div id="formulaire">
             <h2>Créer un compte</h2>
-            <form action="#" method="POST">
+            <form>
                 <div class="form-group">
                     <label for="pseudo">Pseudo :</label>
                     <input type="text" id="pseudo" name="pseudo" required>
                 </div>
-                <div class="form-group">
-                    <label for="email">Adresse e-mail :</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <button id="Submit" type="submit">Créer le compte</button>
+                
+                
+                <button id="Submit">C'est Parti !</button>
             </form>
         </div>
     </div>
     <div id="MenuPlayer">
-
+         <h1>Choisis l'ordre de passage de tes 3 personnage pour l'affrontement</h1>
+         <div><button id="Effacer">Effacer et reprendre l'ordre de sélection</button></div>
         <div class="Pierre">
-            <h1 class="Rocky">Rémy Cailloux</h1>
+
+            <h2 class="Rocky">Rémy Cailloux</h2>
             <button id="PhotoRocki"></button>
             <p>"L'âge de Pierre lui a réussi, mais attention aux mauvais <br> investissements"</p>
             <br>
             
             <P>Avantage sur le Couteau</P>
-            <p>Attaque spécial: Eboulement 90% </p>
-            <p>Défense: 70%</p>
-            <P>Attaque: 50%</P>
-            <P>Parade: 30%</P>
+            <p>Pierre </p>
+        
         </div>
         <div class="Feuille">
-            <h1 class="Paperman">Gaetan l'homme feuille</h1>
+            <h2 class="Paperman">Gaetan l'homme feuille</h2>
             <button id="PhotoPaperman"></button>
             <p>"Un peu dur de la feuille, mais toujours prêt <br> pour en rouler une"</p>
             <br>
             
             <P>Avantage sur la Pierre</P>
-            <p>Attaque spécial: Couverture 90% </p>
-            <p>Défense: 70%</p>
-            <P>Attaque: 50%</P>
-            <P>Parade: 30%</P>
+            <p>Feuille</p>
+          
         </div>
         <div class="ciseaux">
-            <h1 class="Scissorhands">Marvin Le Sage-Aiguisé</h1>
+            <h2 class="Scissorhands">Marvin Le Sage-Aiguisé</h2>
             <button id="PhotoScissorhands"></button>
             <p>"Son esprit visionnaire lui a permis de conçevoir une <br> multitude d'outils pour sa tribus, il bosse
                 actuellement <br>sur les toutes premières paires de ciseaux"</p>
                 <br>
                 
             <P>Avantage sur la Feuille</P>
-            <p>Attaque spécial: Cisaillement 90% </p>
-            <p>Défense: 70%</p>
-            <P>Attaque: 50%</P>
-            <P>Parade: 30%</P>
-
+            <p>Couteau</p>
 
         </div>
         <div id="Commencer"><button id="boutonCommencer">Prêt pour l'affrontement!</button></div>
+    </div> 
+    <div id="PageCombat">
+           <h1 id="Combattez">Combattez!</h1>
+        <div id="CaseJoueur1">
+            <div id="pseudoOutput"></div>
+             <div id="Pierrejoueur">
+                   <h2 id="txt">Pierre</h2></div>
+                   
+             <div id="Feuillejoueur"><h2 id="txt">Feuille</h2></div>
+                   
+             <div id="Couteaujoueur"><h2 id="txt">Couteau</h2></div>
+            </div> 
+        <button id="Lancez">Lancez l'attaque !</button>
+          <div id="Adversaire">Votre adversaire
+             <div id="Pierre"><h2 id="txt">Pierre</h2></div>
+             <div id="Feuille"><h2 id="txt">Feuille</h2></div>
+             <div id="Couteau"><h2 id="txt">Couteau</h2></div>
+          </div>
+        <div id="Arene">
+           <div id="Win">Gagné!</div>
+           <div id="Loose">Perdu!</div>
+           <div id="Egalité">Egalité</div>
+
+        </div>
+
     </div>
+
+
+    
 
 
 
