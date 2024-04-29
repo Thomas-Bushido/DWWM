@@ -1,0 +1,86 @@
+** 1) **
+
+SELECT nom, levelMin FROM arme
+
+SELECT nom,surnom,level FROM personnage;
+
+SELECT nom AS Pseudo, level AS Niveau FROM personnage;
+
+SELECT libelle AS "Types d'armes du jeu" FROM typearme;
+
+
+
+** 2)Les calculs, fonction COUNT - SUM - AVG - MIN - MAX**
+
+
+SELECT COUNT(*) AS 'nombre d''armes' FROM arme;
+
+
+SELECT COUNT(*) AS "nombre de personnage" FROM personnage;
+
+
+SELECT avg(level) as Moyenne_du_niveau FROM personnage;
+
+select sum(baseForce) as "Points de force", sum(baseAgi) as "points d'agilité", sum(baseIntel) as "Points d'intel du jeu" from classe; 
+
+
+SELECT min(levelMin) as "MIN(levelMin)", max(levelmin) as "MAX(levelMin)" FROM arme;
+
+SELECT nom, baseForce + baseAgi + baseIntel AS "NB points de caractéristique" FROM classe
+
+
+
+** 3) **
+
+SELECT CONCAT(pseudo, surnom) FROM personnage;
+
+SELECT concat(nom, "",surnom) AS "Personnage" FROM personnage
+
+SELECT CONCAT (nom,'-F', ' : ', baseForce, '-A', ' : ', baseAgi, '-I', ' : ', baseIntel) AS "Classe" FROM classe;
+
+SELECT SUBSTR(pseudo, 1, 6) FROM personnage;
+
+mysql>  SELECT CONCAT(SUBSTRING(nom, 1, 5),SUBSTRING(description, 1, 20)) AS "Classe" FROM classe;
+
+SELECT CONCAT(SUBSTRING(nom,1,5), "-",SUBSTRING(description,1,20))AS "Classe" FROM classe
+
+
+
+** 4)**
+
+SELECT * FROM arme WHERE levelMin >= '5';
+
+SELECT * FROM arme WHERE degat<25;
+
+SELECT nom, surnom FROM personnage WHERE level=10;
+
+SELECT * FROM typearme WHERE estDistance = 1;
+
+
+
+** 5)**
+
+select *
+    -> from arme
+    -> where levelMin between 4 and 8 ;
+
+SELECT * FROM personnage WHERE idPersonnage <=3 AND level =10;
+
+SELECT nom, levelMin
+FROM arme
+WHERE levelMin < 4 OR levelMin > 8;
+
+select * from arme where idArme <= 2 or degat >= 30;
+
+SELECT * FROM arme WHERE idArme = 1 OR idArme = 2 OR degat BETWEEN 25 AND 40;
+
+SELECT * FROM personnage WHERE level != 8 AND (level > 7 OR level < 6);
+
+SELECT COUNT(*) FROM personnage WHERE level !=10;
+
+select avg(degat) as "Moyenne dégat" from arme where levelMin between 3 and 7;
+
+
+
+
+

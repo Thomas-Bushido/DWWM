@@ -1,0 +1,23 @@
+.required::after{
+     content: "*";
+     color: red;
+     font-size:1rem;
+}
+.required::before{
+    content: "-";
+    color: brown;
+}
+.quote {
+    font-style: italic;
+    color: aquamarine;
+}
+
+/* Aller sur https://ascii.cl/htmlcodes.htm */
+
+.quote::before{
+    content:  "\201C";
+}
+
+.quote::after {
+    content: "\201D";
+}

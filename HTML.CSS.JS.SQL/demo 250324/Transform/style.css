@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+    /* transform: rotate(30deg); */
+    transition: all 2s;
+}
+
+.box:hover {
+   width: 200px;
+   height: 200px;
+   background-color: orange;
+   transform: scale(1.5);
+
+}

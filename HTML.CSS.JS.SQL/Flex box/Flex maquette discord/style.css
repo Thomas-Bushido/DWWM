@@ -1,0 +1,87 @@
+main {
+  max-width: 1010px;
+  display: flex;
+  border: 1px solid black;
+  flex-direction: column;
+  margin: 0 auto;
+  font-size: 100px;
+  min-height: 80vh;
+  min-width: 100px;
+  gap: 0.5vw;
+  padding: 1% 1%;
+}
+#Container1 {
+  display: flex;
+  gap: 0.5vw;
+  flex-grow: 1;
+  justify-content: stretch;
+}
+.Texte {
+  height: fit-content;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+.Item1 {
+  display: flex;
+  background-color: aquamarine;
+  flex-grow: 1;
+}
+.Item2 {
+  display: flex;
+  background-color: #4fbef1;
+  flex-grow: 1;
+}
+.Item3 {
+  display: flex;
+  background-color: #b856e6;
+  flex-grow: 1;
+}
+.Item4 {
+  display: flex;
+  background-color: #eeba29;
+  flex-grow: 1;
+}
+#Container2 {
+  height: 25%;
+  display: flex;
+  flex-grow: 1;
+}
+.Item5 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: red;
+  flex-grow: 1;
+}
+#Container3 {
+  display: flex;
+  flex-grow: 1;
+  gap: 0.5vw;
+}
+.Item6 {
+  display: flex;
+  background-color: aquamarine;
+  flex-grow: 1;
+}
+.Item7 {
+  display: flex;
+  background-color: #4fbef1;
+  flex-grow: 1;
+}
+.Item8 {
+  display: flex;
+  background-color: #b856e6;
+  flex-grow: 1;
+}
+.Item9 {
+  display: flex;
+  background-color: #eeba29;
+  flex-grow: 1;
+}
+@media screen and (max-width: 600px) {
+  main #Container1,
+  main #Container3 {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,67 @@
+main {
+    display: flex;
+    width: 900px;
+    height: 900px;
+    margin: 0 auto;
+    
+}
+
+#Container1 {
+   display: flex;
+   
+    flex-wrap: wrap; 
+   gap: 15px;
+
+}
+
+.Case1 {
+    display: flex;
+    background-color: aqua;
+    width: 900px;
+    height: 100px;
+    
+    
+}
+
+.Case2{
+    display: flex;
+    background-color: red;
+    width: 900px;
+    height: 200px;
+    
+    
+    
+}
+
+#Container2 {
+    display: flex;
+     width:900px;
+     height: 700px;
+     
+     gap: 15px;
+
+}
+.Case3 {
+    display: flex;
+    background-color: green;
+    width: 600px;
+    height: 700px;
+    
+}
+.Case4 {
+    display: flex;
+    background-color: violet;
+    width: 300px;
+    height: 700px;
+    
+    
+}
+.Case5 {
+    display: flex;
+    background-color: grey;
+    width: 900px;
+    height: 100px;
+    
+    
+    
+}

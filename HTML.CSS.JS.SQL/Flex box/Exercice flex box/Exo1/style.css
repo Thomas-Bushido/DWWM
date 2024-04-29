@@ -1,0 +1,46 @@
+#Blue {
+    width: 70%;
+    height: 1000px;
+  margin: 0 auto;
+  background-color: blue;
+  display: flex;
+   flex-direction: column;
+   flex-wrap: wrap; 
+   padding:20px 50px;
+  
+}
+
+#container {
+   display: flex;
+}
+
+
+#Orange {
+    background-color: orangered;
+     margin: 10px; 
+    height: 200px;
+    flex-grow: 0;
+    
+  }
+
+
+#Grey {
+  background-color: grey;
+  margin: 10px; 
+  height: 500px;
+  flex-grow: 1;
+  }
+
+
+#Yellow {
+  background-color: orange;
+   margin: 10px; 
+  flex-grow: 2;
+   }
+
+#Green {
+  background-color: green;
+ margin: 10px; 
+  height: 200px;
+  flex-grow: 0;
+  }

@@ -1,0 +1,78 @@
+#Blue {
+    width: 70%;
+    height: 1000px;
+  margin: 0 auto;
+  background-color: blue;
+   flex-direction: column;
+   flex-wrap: wrap; 
+   padding:20px 50px;
+   display:flex ;
+}
+
+#container1 {
+   display: flex;
+   
+   
+}
+
+
+#Orange {
+    background-color: orangered;
+     margin: 10px; 
+    height: 200px;
+    flex-grow: 0;
+    
+  }
+
+
+#Grey {
+  background-color: grey;
+  margin: 10px; 
+  height: 500px;
+  width: 30%;
+  flex-grow: 0;
+  }
+
+  #Container2 {
+    
+    flex-direction: row;
+    
+  }
+
+
+#Yellow {
+    background-color: orange;
+    width: 960px;
+    margin: 10px; 
+    height: 20%;
+    flex-grow: 1;
+    margin-bottom: 90px;
+    
+}
+
+#Blue2 {
+    background-color: rgb(26, 6, 145);
+    margin: 10px; 
+    height: 20%;
+    flex-grow: 1;
+     width: 960px; 
+     margin-bottom: 90px; 
+     
+    
+}
+
+#Green2 {
+    background-color: rgb(114, 224, 147);
+   margin: 10px; 
+  flex-grow: 1;
+  height: 20%;
+  
+
+}
+
+#Green {
+  background-color: green;
+ margin: 10px; 
+  height: 200px;
+  flex-grow: 0;
+  }

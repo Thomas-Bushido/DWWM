@@ -1,0 +1,66 @@
+#Blue {
+    background-color: white;
+    border: blue solid 9px;
+    display: flex;
+    width: 1000px;
+    height: 900px;
+     margin: 0 auto; 
+    flex-direction: column;
+    padding: 2%;
+}
+
+#Header {
+    background-color: white;
+    border: red solid 9px;
+    display: flex;
+    width: 900px;
+    height: 90px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 100px;
+}
+
+#BlueContainer1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    height: 700px;
+    margin-top: 3%;
+    
+
+}
+
+#Blue1, #Blue2, #Blue3, #Blue4, #Blue5 {
+    background-color: white;
+    border: blue solid 9px;
+    display: flex;
+    width: 25%;
+    margin: 1%;
+    height: 55px;
+}
+
+
+#Container2 {
+    display: flex;
+    flex-direction: column;
+}
+
+#Blue6, #Blue7, #Blue8 {
+    border: blue solid 9px;
+    width: 700px;
+    height: 120px;
+   margin: 1%;
+}
+
+#Green {
+    background-color: white;
+    border: rgb(9, 129, 63) solid 9px;
+    display: flex;
+    width: 100%;
+    height: 250px;
+   
+
+}
+
+
+
