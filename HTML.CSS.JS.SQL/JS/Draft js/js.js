@@ -9,6 +9,19 @@ console.info("Situation : Calculer la somme de deux nombres ==>");
 
 
 
+function Calculersomme(nombre1, nombre2){
+   
+    let somme = nombre1 + nombre2;
+      return somme;
+
+}
+
+let resultat1 = Calculersomme(5, 6);
+console.log(resultat1);
+
+//   let   calc = Calculersomme(nombre1, nombre2);
+
+
 console.info("Situation : Calculer la moyenne ==>");
 
 // Instructions :
@@ -18,9 +31,22 @@ console.info("Situation : Calculer la moyenne ==>");
 // Ensuite, divise la somme par le nombre total d'éléments dans le tableau pour obtenir la moyenne.
 // Retourne la moyenne calculée.
 
+let tab = [8,5,6,7,8,5];
+
+function calcmoy(tab) {
+   let somme = 0;  
+   for(let i = 0; i< tab.length; i++){
+   somme = somme + tab[i];
+   
+   }
+   let moy = somme / tab.length;
+   return moy;
+
+}
 
 
-
+let result = calcmoy(tab);
+console.log(result);
 
 
 

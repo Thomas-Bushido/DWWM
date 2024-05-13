@@ -1,0 +1,55 @@
+1.
+SELECT nom, prenom
+FROM employe
+WHERE sexe = 'M' AND salaire > 15000;
+
+2.
+SELECT prenom
+FROM employe
+ORDER BY salaire DESC
+LIMIT 3;
+
+3.SELECT salaire salaireMin
+FROM employe
+ORDER BY salaire
+LIMIT 1;
+
+4.
+SELECT DISTINCT nom
+FROM employe
+ORDER BY nom;
+
+5.
+SELECT salaire
+FROM employe
+WHERE ISNULL(service);
+
+6.
+SELECT nom, prenom
+FROM employe
+ORDER BY dateContrat;
+
+
+7.
+SELECT nom, prenom
+FROM employe
+WHERE service = 'Marketing'
+ORDER BY nom, prenom;
+
+8.
+SELECT prenom
+FROM employe
+ORDER BY salaire DESC
+LIMIT 1, 1;
+
+9.
+SELECT service
+FROM employe
+WHERE salaire = 8500;
+
+10.
+SELECT service
+FROM employe
+ORDER BY salaire DESC
+LIMIT 1;
+

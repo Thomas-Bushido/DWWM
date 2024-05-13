@@ -1,0 +1,61 @@
+Requête 1 :
+
+SELECT arme.nom, COUNT(dispose.idPersonnage) compte
+    -> FROM arme
+    -> JOIN dispose ON arme.idArme = dispose.idArme
+    -> GROUP BY arme.nom
+    -> HAVING compte BETWEEN 1 AND 2;
++-----------------------+--------+
+| nom                   | compte |
++-----------------------+--------+
+| HacheDuLyon           |      2 |
+| Arc en bois debene    |      1 |
+| Excalibur             |      2 |
+| Arbalete givrante     |      1 |
+| Dague de voleur       |      2 |
+| Dage de contrebandier |      1 |
++-----------------------+--------+
++-----------------------+--------+
+| nom                   | compte |
++-----------------------+--------+
+| HacheDuLyon           |      2 |
+| Arc en bois debene    |      1 |
+| Excalibur             |      2 |
+| Arbalete givrante     |      1 |
+| Dague de voleur       |      2 |
+| Dage de contrebandier |      1 |
++-----------------------+--------+
+
+
+La différence entre les deux requêtes réside dans les tables sur lesquelles vous effectuez les jointures. Analysons chaque requête :
+
+
+Vous joignez la table "arme" avec la table "dispose" sur la colonne "idArme".
+Vous comptez le nombre de correspondances entre les armes et les personnages dans la table "dispose".
+Vous groupez les résultats par le nom de l'arme.
+Ensuite, vous filtrez les résultats pour ne garder que les armes avec un nombre de correspondances compris entre 1 et 2.
+
+
+Requête 2 :
+
+SELECT arme.nom, COUNT(dispose.idPersonnage) compte
+    -> FROM arme
+    -> JOIN personnage ON  arme.idArme = personnage.idPersonnage
+    -> JOIN dispose ON arme.idArme = dispose.idPersonnage
+    -> GROUP BY arme.nom
+    -> HAVING compte BETWEEN 1 AND 2;
++--------------------+--------+
+| nom                | compte |
++--------------------+--------+
+| Arc en bois        |      2 |
+| Arc en bois debene |      1 |
+| Arc des anges      |      2 |
+| Excalibur          |      2 |
++--------------------+--------+
+4 rows in set (0.00 sec)
+
+Vous joignez la table "arme" avec la table "personnage" sur la colonne "idArme".
+Ensuite, vous joignez la table "dispose" avec la table "arme" sur la colonne "idPersonnage".
+Vous comptez le nombre de correspondances entre les armes et les personnages dans la table "dispose".
+Vous groupez les résultats par le nom de l'arme.
+Ensuite, vous filtrez les résultats pour ne garder que les armes avec un nombre de correspondances compris entre 1 et 2.

@@ -1,0 +1,39 @@
+Draft
+
+1.
+SELECT prenom, salaire
+FROM employe
+HAVING salaire > (SELECT AVG(salaire)
+                  FROM employe
+                  ORDER BY prenom)
+
+2.
+SELECT prenom, salaire
+FROM employe
+WHERE salaire > 1.4*( SELECT AVG(salaire)
+                      FROM employe) 
+
+3.
+SELECT CONCAT(e.nom, ' ', e.prenom) nomComplet, s.nom serv
+FROM employe e
+JOIN service S
+USING(idService)
+ORDER BY nomComplet;
+
+4.
+SELECT CONCAT(e.nom, ' ', e.prenom) AS nomComplet, s.nom AS serv
+FROM employe e
+LEFT JOIN service s
+ON e.idService = s.idService
+WHERE s.idService IS NULL
+ORDER BY nomComplet;
+
+5.
+SELECT CONCAT(e.nom, ' ', e.prenom) AS nomComplet, s.nom AS serv
+FROM employe e
+LEFT JOIN service s
+ON e.idService = s.idService
+WHERE e.prenom IS NULL
+ORDER BY nomComplet;
+
+6.

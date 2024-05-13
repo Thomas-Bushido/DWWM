@@ -1,0 +1,97 @@
+1
+SELECT * FROM personnage 
+INNER JOIN classe ON personnage.idClasse = classe.idClasse;
+
+SELECT arme.nom, arme.levelMin, arme.degat, typearme.libelle, typearme.estDistance 
+FROM arme 
+INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme;
+
+
+2
+SELECT personnage.nom, classe.nom 
+FROM personnage 
+INNER JOIN classe ON personnage.idClasse = classe.idClasse;
+
+SELECT personnage.nom, arme.nom, arme.levelMin, arme.degat 
+FROM personnage 
+JOIN arme ON personnage.idArmeUtilise = arme.idArme
+
+SELECT personnage.nom, arme.nom, arme.levelMin, arme.degat, typearme.libelle AS type_arme, typearme.estDistance 
+FROM personnage 
+JOIN arme ON personnage.idArmeUtilise = arme.idArme 
+JOIN typearme ON arme.idTypeArme = typearme.idTypeArme;
+
+
+3
+SELECT personnage.nom, personnage.level, arme.nom, arme.levelMin 
+FROM personnage 
+JOIN dispose ON personnage.idPersonnage = dispose.idPersonnage  
+JOIN arme ON dispose.idArme = arme.idArme;
+
+SELECT arme.nom, arme.levelMin, arme.degat, typearme.libelle 
+FROM arme 
+JOIN typearme ON arme.idTypeArme = typearme.idTypeArme 
+WHERE typearme.estDistance = 0;
+
+SELECT personnage.nom, arme.nom, typearme.libelle 
+FROM personnage 
+JOIN classe ON personnage.idClasse = classe.idClasse 
+JOIN arme ON personnage.idArmeUtilise = arme.idArme 
+JOIN typearme ON arme.idTypeArme = typearme.idTypeArme 
+WHERE classe.idClasse = 1;
+
+
+4
+SELECT personnage.idPersonnage, personnage.nom, arme.nom, typearme.libelle  
+FROM arme 
+INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme 
+INNER JOIN dispose ON arme.idArme = dispose.idArme 
+INNER JOIN personnage ON dispose.idPersonnage = personnage.idPersonnage 
+WHERE personnage.level = 10;
+
+SELECT personnage.idPersonnage, personnage.nom, arme.nom, typearme.libelle 
+FROM arme 
+INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme 
+INNER JOIN dispose ON arme.idArme = dispose.idArme 
+INNER JOIN personnage ON dispose.idPersonnage = personnage.idPersonnage 
+WHERE personnage.level = 10 
+ORDER BY personnage.idPersonnage;
+
+SELECT AVG(arme.degat) 
+FROM arme 
+INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme 
+WHERE typearme.estDistance = 1;
+
+SELECT personnage.nom 
+FROM personnage 
+INNER JOIN arme ON personnage.idArmeUtilise = arme.idArme 
+INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme 
+WHERE typearme.libelle LIKE 'a%';
+
+
+5
+SELECT  libelle, arme.nom 
+FROM arme 
+RIGHT JOIN typearme ON typearme.idTypeArme = arme.idTypeArme;
+
+SELECT  libelle, arme.nom 
+FROM arme 
+RIGHT JOIN typearme ON typearme.idTypeArme = arme.idTypeArme;
+
+SELECT arme.*, personnage.*
+FROM arme 
+LEFT JOIN personnage ON arme.idArme = personnage.idArmeUtilise 
+ORDER BY arme.levelMin;
+
+SELECT arme.idArme, arme.nom, dispose.idPersonnage, personnage.nom 
+FROM dispose 
+RIGHT JOIN arme ON dispose.idArme = arme.idArme 
+LEFT JOIN personnage ON dispose.idPersonnage = personnage.idPersonnage 
+ORDER BY arme.idArme;
+
+
+
+
+
+
+

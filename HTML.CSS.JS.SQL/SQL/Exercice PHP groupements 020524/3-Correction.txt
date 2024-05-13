@@ -1,0 +1,67 @@
+1
+SELECT typearme.libelle AS "Type d'arme", COUNT(arme.idTypeArme) AS "Nb d'arme"
+FROM arme
+JOIN typearme ON typearme.idTypeArme = arme.idTypeArme
+GROUP BY typearme.idTypeArme ;
+
+SELECT c.nom, COUNT(p.idClasse)
+    -> FROM personnage p
+    -> JOIN classe c ON p.idCLasse = c.idClasse
+    -> GROUP BY c.nom;
+
+
+SELECT p.nom AS "Nom du personnage", COUNT(d.idArme) AS "Nombre d'armes"
+    -> FROM personnage p
+    -> LEFT JOIN dispose d ON p.idPersonnage = d.idPersonnage
+    -> GROUP BY p.nom;
+
+SELECT classe.nom, personnage.nom, COUNT(*) 
+FROM personnage
+INNER JOIN classe ON personnage.idClasse = classe.idClasse
+INNER JOIN dispose ON personnage.idPersonnage = dispose.idPersonnage
+WHERE classe.nom = 'guerrier'
+GROUP BY classe.nom, personnage.nom;
+
+SELECT arme.nom, COUNT(personnage.idPersonnage) 
+FROM arme 
+LEFT JOIN dispose ON arme.idArme = dispose.idArme 
+LEFT JOIN personnage ON personnage.idPersonnage = dispose.idPersonnage 
+GROUP BY arme.idArme, arme.nom;
+
+SELECT c.nom AS "Classe", AVG(p.level) AS "Niveau moyen" 
+FROM personnage p 
+INNER JOIN classe c ON p.idClasse = c.idClasse  
+GROUP BY c.nom;
+
+
+2
+  SELECT personnage.nom, AVG(level) moyenne
+    ->  FROM personnage
+    ->  GROUP BY personnage.idClasse
+    -> HAVING moyenne > 9;
+
+2.2
+
+SELECT a.nom, COUNT(d.idpersonnage)
+FROM arme a
+LEFT JOIN dispose d ON a.idArme = d.idArme
+GROUP BY a.nom
+HAVING COUNT(d.idPersonnage) BETWEEN 1 AND 2
+ORDER BY COUNT(d.idPersonnage) DESC;
+
+2.2
+SELECT a.nom, COUNT(p.idPersonnage)
+FROM arme a
+INNER JOIN dispose d ON d.idArme = a.idArme
+INNER JOIN personnage p ON p.idPersonnage = d.idPersonnage
+GROUP BY a.nom
+HAVING COUNT(p.idPersonnage)<=2
+
+
+2.3
+select t.libelle, COUNT(a.idTypeArme)
+    -> FROM typearme t
+    ->  LEFT JOIN arme a ON t.idTypeArme = a.idTypeArme
+    -> where t.estDistance = 0
+    -> GROUP BY t.idTypeArme, t.libelle
+    -> HAVING COUNT(a.idArme) <=1;

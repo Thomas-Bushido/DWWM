@@ -1,0 +1,35 @@
+***********************************
+**2-EXERCICES LECTURE ET ECRITURE**
+***********************************
+
+Exercice 1
+
+$demandeNbr =readline("Saisissez un nombre ici : ");
+$demandeNbr =$demandeNbr **2;
+echo $demandeNbr;
+
+Exercice 2 
+
+$prenom = readline("Entrez votre prénom");
+echo "Bonjour $prenom";
+
+Exercice 3 
+
+<?php
+// Ecrire un programme qui lit le prix HT d’un article, le nombre d’articles et le taux de TVA, 
+// et qui fournit le prix total TTC correspondant. Faire en sorte que des libellés apparaissent clairement.
+$prix = readline("Entrez un prix HT : ");
+$nbArticles = readline("Entrez le nombre d'articles : ");
+$TVA = readline("Entrez la TVA : ");
+
+$totalHT = $nbArticles * $prix;
+$totalTTC = $totalHT + ($totalHT * ($TVA / 100));
+
+echo $totalTTC;
+
+
+**********************
+**3-EXERCICE IF ELSE**
+**********************
+
+Exercice 1 

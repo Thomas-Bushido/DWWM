@@ -1,0 +1,69 @@
+Corrigé exercice 2
+
+1.
+SELECT AVG(salaire) salaireMoyenMarketing
+FROM employe
+WHERE service = 'Marketing';
+
+2.
+SELECT service, ROUND(AVG(salaire)) salaireMoyen
+FROM employe
+GROUP BY service
+ORDER BY salaireMoyen DESC;
+
+3.
+SELECT service, ROUND(AVG(salaire)) salaireMoyen
+FROM employe
+WHERE service IS NOT NULL
+GROUP BY service
+ORDER BY salaireMoyen DESC;
+
+4.
+SELECT service, COUNT(*) nb
+FROM employe
+GROUP BY service
+ORDER BY nb DESC, service;
+
+5.
+SELECT service, COUNT(*) nb
+FROM employe
+WHERE service IS NOT NULL
+GROUP BY service
+ORDER BY nb DESC, service;
+
+6.
+SELECT service, COUNT(*) nb
+FROM employe
+WHERE service IS NOT NULL AND salaire < 15000
+GROUP BY service
+ORDER BY nb DESC, service;
+
+7.
+SELECT service, COUNT(*) nb
+FROM employe
+WHERE service IS NOT NULL
+GROUP BY service
+HAVING nb >= 2
+ORDER BY nb DESC, service;
+
+8.
+SELECT nom, COUNT(nom) nb
+FROM employe
+GROUP BY nom
+ORDER BY nom;
+
+9.
+SELECT nom, COUNT(nom) nb
+FROM employe
+WHERE nom LIKE 'Du%'
+GROUP BY nom
+ORDER BY nom;
+
+10.
+SELECT nom, COUNT(nom) nb
+FROM employe
+WHERE nom LIKE 'Du%'
+GROUP BY nom
+HAVING nb >= 2
+ORDER BY nom;
+

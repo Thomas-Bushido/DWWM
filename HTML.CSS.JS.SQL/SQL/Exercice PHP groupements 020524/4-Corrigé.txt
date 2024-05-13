@@ -1,0 +1,37 @@
+4.1
+
+SELECT nom, degat
+    -> FROM arme
+    -> WHERE degat > (
+    -> SELECT AVG(degat)
+    -> FROM arme
+    -> );
+
+
+4.2
+
+SELECT *
+FROM personnage
+WHERE level < (SELECT AVG(level) FROM personnage);
+
+4.3
+
+SELECT *
+FROM personnage p
+WHERE p.level >(SELECT AVG(level)
+                FROM personnage p
+                INNER JOIN classe c ON p.idClasse = c.idClasse
+                WHERE c.nom = "Archer");
+
+
+4.4
+
+SELECT
+    MAX(valeur)
+FROM (SELECT COUNT(*) AS 'valeur'
+        FROM arme  
+        JOIN typeArme ON arme.idTypeArme = typeArme.idTypeArme
+        WHERE estDistance = 1
+        GROUP BY typeArme.idTypeArme) t1;
+
+

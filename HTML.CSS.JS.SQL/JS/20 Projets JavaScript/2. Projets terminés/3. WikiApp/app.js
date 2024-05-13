@@ -23,20 +23,20 @@ function handleSubmit(e) {
 }
 
 async function wikiApiCall(searchInput) {
-  try {
+  // try {
     const response = await fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&origin=*&srlimit=20&srsearch=${searchInput}`);
     console.log(response);
-    if (!response.ok) {
-      throw new Error(`${response.status}`);
-    }
+    // if (!response.ok) {
+    //   throw new Error(`${response.status}`);
+    // }
 
     const data = await response.json();
 
     createCards(data.query.search);
-  } catch (error) {
-    errorMsg.textContent = `${error}`;
-    loader.style.display = "none";
-  }
+  // } catch (error) {
+  //   errorMsg.textContent = `${error}`;
+  //   loader.style.display = "none";
+  // }
 }
 
 function createCards(data) {

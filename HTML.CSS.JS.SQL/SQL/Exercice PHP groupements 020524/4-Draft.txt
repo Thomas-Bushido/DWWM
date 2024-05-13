@@ -1,0 +1,29 @@
+4.1
+
+mysql> SELECT arme.nom, arme.degat 
+    -> FROM arme
+    -> GROUP BY arme.nom
+    -> HAVING arme.degat > (
+    -> SELECT AVG(arme.degat)
+    -> FROM arme);
+
+4.2
+
+SELECT personnage.idPersonnage, personnage.nom, personnage.surnom, personnage.level, personnage.idArmeUtilise, personnage.idClasse
+FROM personnage
+HAVING personnage.level < (
+SELECT AVG(personnage.level)
+FROM personnage);
+
+4.3
+
+SELECT personnage.idPersonnage, personnage.nom, personnage.surnom, personnage.level, personnage.idArmeUtilise, personnage.idClasse
+FROM personnage
+HAVING personnage.level > (
+SELECT AVG(personnage.level)
+FROM personnage
+JOIN classe ON personnage.idPersonnage = classe.idClasse
+WHERE classe.idClasse = 2);
+
+4.4
+

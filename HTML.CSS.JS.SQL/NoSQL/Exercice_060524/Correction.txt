@@ -1,0 +1,51 @@
+Correction
+
+
+1.db.world.countDocuments()
+
+2.db.world.distinct("Continent")
+
+3.db.world.find({ "Code": "FRA" }) ou db.worlds.findOne({ "Name": "France" })
+
+4.db.world.find({ "Continent": "Europe", "Population": { $lt: 100000 } })   
+
+5.db.world.find({Continent : "Oceania", IndepYear : {$ne : "NA"}}))
+
+6.db.world.aggregate([
+...   { $sort: { Area: -1 } }, // Trie les documents par ordre décroissant de superficie
+...   { $limit: 1 } // Limite les résultats à un seul document, le plus grand pays
+... ])
+
+7.db.pays.aggregate([{$group: {_id: "$Continent",totalPays: { $sum: 1 },populationTotale: { $sum: "$Population" },paysIndependants: {$sum: { $toInt: { $ne: ["$IndepYear", "NA"]}}}}}])
+
+ou
+
+db.world.aggregate([
+    { 
+        $group: { 
+_id: "$Continent", 
+totalPays: { $sum: 1 },
+totalPopulation: { $sum: "$Population" },
+totalIndependant: { 
+                $sum: { 
+                    $cond: { 
+                        if: { $ne: ["$IndepYear", null] },                        then: 1, 
+                        else: 0 // 
+                    } 
+                } 
+            } 
+        } 
+    }
+])
+
+8.db.world.find({Name: 'France'}, {Cities: {Name: 1, Population:1}})
+ou
+db.world.findOne({ "Code": "FRA" }).Population
+
+9.db.world.findOne({ "Name": "France" }, { "Capital.Name": 1, "Capital.Population": 1, "_id": 0 })
+
+10.db.pays.aggregate([ 
+    { $unwind: "$OffLang" }, 
+    { $group: { _id: "$OffLang.Language", Count: { $count: {} } } }, 
+    { $sort: { Count: -1 } }, 
+    { $match: { Count: { $gt: 15 } } }])
