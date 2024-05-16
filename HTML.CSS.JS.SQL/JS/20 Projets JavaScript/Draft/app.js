@@ -1,60 +1,53 @@
-//  API ENDPOINT : `https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&origin=*&srlimit=20&srsearch=${searchInput}`
 
-// `https://en.wikipedia.org/?curid=${el.pageid}`;
+// API ENDPOINT : `https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&origin=*&srlimit=20&srsearch=${searchInput}`
 
 const form = document.querySelector('form');
 const input = document.querySelector('input');
-const ErrorMsg = document.querySelector(".error-msg");
-const ResultDisplay = document.querySelector(".results-display");
-const loader = document.querySelector(".loader");
+const resultdisplay = document.querySelector('result-display');
+const errormsg = document.querySelector('error-msg');
+const loader = document.querySelector("loader");
 
-form.addEventListener("submit", handleSubmit);
+form.addEventListener("submit", handlesubmit)
 
-function handleSubmit(e){
- e.preventDefault();
- if(input.value ===""){
-    ErrorMsg.textContent = "Wops";
+function handlesubmit(e){
+  e.preventDefault();
+  if(input.value ===""){
+    errormsg.textContent = "Wops"
     return;
- }
- else{
-    ErrorMsg.textContent ="";
+  }
+  else{
+    resultdisplay.textContent = "";
     loader.style.display = "flex";
-    ResultDisplay.textContent = "";
-    WikiApiCall(input.value);
- }
+    errormsg.textContent = "";
+    Wikiapicall(input.value);
+  }
 }
 
-async function WikiApiCall(searchInput){
-    const response = await fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&origin=*&srlimit=20&srsearch=${searchInput}`);
-    console.log(response);
-    
-     const data = await response.json();
-     createCards(data.query.search);
-     console.log(data);
+async function Wikiapicall(data.query.search){
+   const response = await fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&origin=*&srlimit=20&srsearch=${searchInput}`);
+   const data = await response.json();
+
+   createcards()
 }
 
+function createcards(data){
+  if(!length){
+    errormsg.textContent ="oups";
+   return;
+  }
+  data.foreach(el =>{
 
-function createCards(data) {
-    if(!data.length){
-        ErrorMsg.textContent = "Wopsy, aucun résultat";
-        loader.style.display = "none";
-        return;
-    }
-    data.forEach(el => {
-        const url = `https://en.wikipedia.org/?curid=${el.pageid}`;
-        const card = document.createElement("div");
-        card.className = "result-item";
-        card.innerHTML =`
-        <h3 class="result-title">
-         <a href=${url} target="_blank">${el.title}</a>
-         </h3>
-         <a href=${url} class="result-link" target="_blank">${url}</a>   
-        <span class="result-snippet">${el.snippet}</span>
-        <br>
-         `;
-         ResultDisplay.appendChild(card);
-         
-    })
-    loader.style.display ="none"; 
-    
+   const url = `https://en.wikipedia.org/?curid=${el.pageid}`;
+   const card = document.createElement('div');
+   card.className = "result-item";
+   card.innerHTML=`
+   <h3 class="result-title">
+   <a href=${url} target="_blank>${el.title}</a>  
+   </h3>
+  <a class="result-link" href=${url} target="_blank">${el.page} </a>
+  <span class="result-snippet>${el.snippet}</span>
+   `;
+
+
+  });
 }

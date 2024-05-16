@@ -130,38 +130,11 @@
 
 //    ***********************
 // // **Partie 3 Exercice 6**
-//    ***********************
-
-
-$heure = readline('Entrez une heure : ');
-$minute = readline('Entrez une minute : ') + 1;
-
-// Si les minutes dépassent 59, on ajuste l'heure et les minutes
-
-if ($minute >= 60) {
-    $heure += 1;
-    $minute -= 60;
-}
-if ($heure >=24 ){
-    $heure-=24 ;
-}
-
-echo "Dans une minute, il sera $heure heure(s) et $minute minute(s).";
-
-
-//    ***********************
-// // **Partie 3 Exercice 7**
-//    ***********************
+// //    ***********************
 
 
 // $heure = readline('Entrez une heure : ');
-// $minute = readline('Entrez une minute : ');
-// $seconde = readline('Entrez une seconde : ') + 1;
-// // Si les secondes dépassent 59, on ajuste les secondes et les minutes
-// if ($seconde >= 60) {
-//     $minute += 1;
-//     $seconde -= 60;
-// }
+// $minute = readline('Entrez une minute : ') + 1;
 
 // // Si les minutes dépassent 59, on ajuste l'heure et les minutes
 
@@ -169,19 +142,46 @@ echo "Dans une minute, il sera $heure heure(s) et $minute minute(s).";
 //     $heure += 1;
 //     $minute -= 60;
 // }
-
-
 // if ($heure >=24 ){
 //     $heure-=24 ;
 // }
 
-
-// echo "Dans une seconde, il sera $heure heure(s), $minute minute(s) et $seconde seconde(s) .";
+// echo "Dans une minute, il sera $heure heure(s) et $minute minute(s).";
 
 
 //    ***********************
-// // **Partie 3 Exercice 8**
-//    ***********************
+// // **Partie 3 Exercice 7**
+// //    ***********************
 
 
-?>
+$heure = readline('Entrez une heure : ');
+$minute = readline('Entrez une minute : ');
+$seconde = readline('Entrez une seconde : ') + 1;
+// Si les secondes dépassent 59, on ajuste les secondes et les minutes
+if ($seconde >= 60) {
+    $minute += 1;
+    $seconde -= 60;
+}
+
+// Si les minutes dépassent 59, on ajuste l'heure et les minutes
+
+if ($minute >= 60) {
+    $heure += 1;
+    $minute -= 60;
+}
+
+
+if ($heure >=24 ){
+    $heure-=24 ;
+}
+
+
+echo "Dans une seconde, il sera $heure heure(s), $minute minute(s) et $seconde seconde(s) .";
+
+
+// //    ***********************
+// // // **Partie 3 Exercice 8**
+// //    ***********************
+
+
+// ?>

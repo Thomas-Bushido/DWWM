@@ -1,0 +1,219 @@
+***********************************
+**2-EXERCICES LECTURE ET ECRITURE**
+***********************************
+
+Exercice 1
+
+$demandeNbr =readline("Saisissez un nombre ici : ");
+$demandeNbr =$demandeNbr **2;
+echo $demandeNbr;
+
+Exercice 2 
+
+$prenom = readline("Entrez votre prénom");
+echo "Bonjour $prenom";
+
+Exercice 3 
+
+<?php
+// Ecrire un programme qui lit le prix HT d’un article, le nombre d’articles et le taux de TVA, 
+// et qui fournit le prix total TTC correspondant. Faire en sorte que des libellés apparaissent clairement.
+$prix = readline("Entrez un prix HT : ");
+$nbArticles = readline("Entrez le nombre d'articles : ");
+$TVA = readline("Entrez la TVA : ");
+
+$totalHT = $nbArticles * $prix;
+$totalTTC = $totalHT + ($totalHT * ($TVA / 100));
+
+echo $totalTTC;
+
+
+**********************
+**3-EXERCICE IF ELSE**
+**********************
+
+Exercice1 1
+
+// 1°) Ecrire un algorithme qui demande un nombre à l’utilisateur, et l’informe ensuite si ce 
+// nombre est positif ou négatif (on laisse de côté le cas où le nombre vaut zéro).
+
+// $saisie = readline("Saisir un nombre : ") . "\n";
+
+
+// if ($saisie > 0) {
+//     echo "Le nombre est positif" . "\n";
+// } else {
+//     echo "Le nombre est négatif \n";
+// }
+// echo "\n";
+
+
+
+Exercice 3
+
+Ecrire un algorithme qui demande un nombre à l’utilisateur, et l’informe ensuite si ce nombre est positif ou négatif (on inclut cette fois le traitement du cas où le nombre vaut zéro).
+$nbreUtilisateur = readline("Saisir un 1er nombre : ");
+switch ($nbreUtilisateur) {
+case $nbreUtilisateur === 0:
+   echo "Le nombre utilisateur est un nombre nul";
+   echo gettype($nbreUtilisateur); 
+   break;
+case $nbreUtilisateur > 0:
+   echo "Le nombre utilisateur est un nombre positif";
+   break;
+   case $nbreUtilisateur < 0:
+   echo "Le nombre utilisateur un nombre négatif";
+   break;
+
+   }
+// echo "\n";
+
+
+Exercice 2 
+
+    $nombre1 = readline("saisi le premier nombre : ");
+    $nombre2 = readline(" saisir le deuxième nombre : ");
+
+    if (($nombre1 > 0 && $nombre2 > 0) || ($nombre1 < 0 && $nombre2 < 0)) {
+        echo "Le produit des deux nombres est positif.\n";
+    } else {
+        echo "Le produit des deux nombres est négatif.\n";
+    }
+
+Exercice 4
+
+$nbre1 = readline("Sélctionnez votre 1er nombre : ");
+$nbre2 = readline("Sélctionnez votre 2ème nombre : ");
+
+if ($nbre1 == 0 || $nbre2  == 0) {
+    echo "Le produit est nul.";
+} else {
+    
+    if (($nbre1 < 0 && $nbre2  > 0) || ($nbre1 > 0 && $nbre2  < 0)) {
+        echo "Le produit est négatif.";
+    } else {
+        echo "Le produit est positif.";
+    }
+}
+
+Exercice 5 
+
+ $age = readline("Age de l'enfant: ");
+
+if ($age > 5 && $age < 8 ){
+    echo "Poussin";
+} elseif ($age > 7 && $age < 10 ){
+     echo "Pupille";
+} elseif ($age > 9 && $age < 12 ){
+        echo "Minime";
+} elseif ($age > 12 ){
+        echo "Cadet";
+}
+
+Exercice 6
+
+
+
+// $heure = readline('Entrez une heure : ');
+// $minute = readline('Entrez une minute : ') + 1;
+
+// // Si les minutes dépassent 59, on ajuste l'heure et les minutes
+
+// if ($minute >= 60) {
+//     $heure += 1;
+//     $minute -= 60;
+// }
+// if ($heure >=24 ){
+//     $heure-=24 ;
+// }
+
+// echo "Dans une minute, il sera $heure heure(s) et $minute minute(s).";
+
+
+//    ***********************
+// // **Partie 3 Exercice 7**
+// //    ***********************
+
+
+$heure = readline('Entrez une heure : ');
+$minute = readline('Entrez une minute : ');
+$seconde = readline('Entrez une seconde : ') + 1;
+// Si les secondes dépassent 59, on ajuste les secondes et les minutes
+if ($seconde >= 60) {
+    $minute += 1;
+    $seconde -= 60;
+}
+
+// Si les minutes dépassent 59, on ajuste l'heure et les minutes
+
+if ($minute >= 60) {
+    $heure += 1;
+    $minute -= 60;
+}
+
+
+if ($heure >=24 ){
+    $heure-=24 ;
+}
+
+
+echo "Dans une seconde, il sera $heure heure(s), $minute minute(s) et $seconde seconde(s) .";
+
+
+//EXERCICE 8
+$nbPhotocopies = readline("Entrez le nombre de photocopies : ");
+$prix;
+switch(true){
+    case ($nbPhotocopies <= 10):
+        $prix = $nbPhotocopies * 0.10;
+        break;
+    
+    case ($nbPhotocopies <= 30):
+        $prix = 10 * 0.10 + ($nbPhotocopies - 10) * 0.09 ;
+        break;
+
+    case ($nbPhotocopies > 30):
+        $prix = 10 * 0.10 + 20 * 0.09 + ($nbPhotocopies - 30) * 0.08;
+        break;
+
+    default:
+        echo "Valeur incorrecte";
+        break;   
+}
+echo "La facture des photocopies est de $prix €.\n\n";
+
+
+EXERCICE 9 
+
+$sexe = readline("Indiquez votre sexe : ");
+$age = readline("Indiquez votre age : ");
+
+if($sexe == "Homme" && $age >= 20){
+    echo "Vous êtes imposable";
+}elseif($sexe == "Femme" && $age >=18 && $age <=35 ){
+    echo "Vous êtes imposable";
+}else{
+    echo "Vous ne payez pas d'impots !";
+}
+
+
+<?php
+// Ecrivez un algorithme qui après avoir demandé un numéro de jour, de mois et d'année à l'utilisateur, renvoie s'il s'agit d’une année bissextile.
+// Petit rappel :
+//      • Une année est bissextile si elle est divisible par quatre
+//      • Les années divisibles par 100 ne sont pas bissextiles, mais les années divisibles par 400 le sont.
+
+$userDay = readline('Veuillez entrer le jour : ');
+$userMonth = readline('Veuillez entrer le mois : ');
+$userYear = readline('Veuillez entrer l\'année : ');
+
+if ($userYear % 4 === 0 && ($userYear % 400 === 0 || !($userYear % 100 === 0))) {
+    echo "L'année {$userYear} est bissextile"; 
+} else {
+    echo "L'année n'est pas bissextile";
+}
+
+
+
+
+
