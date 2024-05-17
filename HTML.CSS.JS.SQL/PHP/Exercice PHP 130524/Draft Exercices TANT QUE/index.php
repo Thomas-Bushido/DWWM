@@ -105,26 +105,45 @@
 
 // Exercice 6 
 
-// 1) 
-$aleat = rand(1, 9);
-$tab = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+// 1°) 
+// $aleat = rand(1, 9);
+// $tab = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-// Initialiser un tableau pour stocker les résultats de la multiplication
-$result = array();
+// // Initialiser un tableau pour stocker les résultats de la multiplication
+// $result = array();
 
-// Itérer à travers chaque élément du tableau et effectuer la multiplication
-foreach ($tab as $nombre) {
-    $produit = $aleat * $nombre;
-    // Afficher les détails de chaque itération
-    echo "$aleat * $nombre = $produit\n";
-    // Ajouter le résultat à notre tableau de résultats
-    $result[] = $produit;
-}
+// // Itérer à travers chaque élément du tableau et effectuer la multiplication
+// foreach ($tab as $nombre) {
+//     $produit = $aleat * $nombre;
+//     // Afficher les détails de chaque itération
+//     echo "$aleat * $nombre = $produit\n";
+//     // Ajouter le résultat à notre tableau de résultats
+//     $result[] = $produit;
+// }
 
-// Afficher les résultats finaux
-echo "Résultats de la multiplication : " . implode(", ", $result) . "\n";
+// // Afficher les résultats finaux
+// echo "Résultats de la multiplication : " . implode(", ", $result) . "\n";
 
 // 2°)
 
+
+$nombre = 0; 
+
+
+while (true) {
+    $nombre = (int) readline("Veuillez entrer un nombre : ");
+
+    $nombres_precedents = [];
+    $nombres_suivants = [];
+
+    for ($i = 1; $i <= 5; $i++) {
+         
+        $nombres_precedents[] = $nombre - $i;
+        $nombres_suivants[] = $nombre + $i;
+    }
+
+    echo "Les 5 nombres précédents sont : " . implode(", ", $nombres_precedents) . "\n";
+    echo "Les 5 nombres suivants sont : " . implode(", ", $nombres_suivants) . "\n";
+}
 
 

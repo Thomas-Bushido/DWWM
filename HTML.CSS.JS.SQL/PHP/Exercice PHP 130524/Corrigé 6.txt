@@ -1,0 +1,73 @@
+****************
+***EXERCICE 1***
+****************
+
+ $nombre = rand(1, 9);
+
+echo "Table de multiplication pour : $nombre\n\n";
+
+for ($i = 1; $i <= 10; $i++) {
+    $resultat = $nombre * $i;
+    echo "$nombre x $i = $resultat\n";
+} 
+
+***********************************************************************
+***********************************************************************
+
+****************
+***EXERCICE 2***
+****************
+
+$nbre = readline("Entrez un nombre : ");
+$nbreFin = $nbre-5;
+
+for ($i=$nbre; $i > $nbreFin; $i--) { 
+    echo $i-1 . " "."\n";
+}
+
+
+$nbreFin = $nbre+4;
+
+for ($i=$nbre; $i <= $nbreFin; $i++) { 
+    echo $i+1 ." "."\n";
+}
+
+***********************************************************************
+***********************************************************************
+
+****************
+***EXERCICE 3***
+****************
+
+$num = readline("nombre : ");   
+$fac = 1;
+for ( $i = 1 ; $i <= $num ; $i++ ) {  
+    $fac = $i * $fac;
+}  
+echo $fac;  
+
+
+***********************************************************************
+***********************************************************************
+
+****************
+***EXERCICE 4***
+****************
+
+<?php
+    $highNombre= readline("Entrez un nombre : ");
+    $lowNombre = $highNombre;
+
+    for($i=0; $i<4 ; $i++){
+        $nombre = readline("Entrez un nombre : ");
+        if($nombre > $highNombre){
+            $highNombre = $nombre;
+        }elseif($nombre < $lowNombre){
+            $lowNombre = $nombre;
+        }
+    }
+
+    echo "Nombre le plus grand : $highNombre\n";
+    echo "Nombre le plus petit : $lowNombre";
+?>
+
