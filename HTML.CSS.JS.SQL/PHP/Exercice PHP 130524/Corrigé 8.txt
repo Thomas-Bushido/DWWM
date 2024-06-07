@@ -1,0 +1,87 @@
+**************
+**Exercice 8**
+**************
+
+1.1
+
+$chomage = array(
+    'Autriche' => 4.9,
+    'Allemagne' => 9.3,
+    'Danemark' => 4.8,
+    'Espagne' => 9.4,
+    'France' => 9.7
+);
+
+foreach ($chomage as $pays => $taux) {
+    echo "Le taux de chômage en " . $pays . " est de " . $taux . "%.\n";
+}
+
+**************************************************************************
+**************************************************************************
+
+
+1.2
+
+$chomage = array(
+    'Autriche' => 4.9,
+    'Allemagne' => 9.3,
+    'Danemark' => 4.8,
+    'Espagne' => 9.4,
+    'France' => 9.7
+);
+
+
+foreach ($chomage as $pays => $taux) {
+    if ($taux < 5) {
+        echo $pays . "\n";
+    }
+}
+
+
+**************************************************************************
+**************************************************************************
+
+1.3
+
+$chomage = array(
+    'Autriche' => 4.9,
+    'Allemagne' => 9.3,
+    'Danemark' => 4.8,
+    'Espagne' => 9.4,
+    'France' => 9.7
+);
+
+
+$tauxChomagePlusFaible = min($chomage);
+
+$nomPaysPlusFaible = array_search($tauxChomagePlusFaible, $chomage);
+
+
+echo "Le pays avec le taux de chômage le plus faible est : " . $nomPaysPlusFaible . " "; 
+
+
+**************************************************************************
+**************************************************************************
+
+
+2.1 et 2.2
+
+$tabNotes = array ("boucher" => 16,
+                   "chasseur" => 13,
+                   "paysan" => 3,
+                   "boulanger" => 8,
+                   "pecheur" => 18
+);
+
+
+foreach ($tabNotes as $key => $value) {
+    echo $key, " ", $value, "\n";
+};
+
+$sum = array_sum($tabNotes);
+$moyenne = $sum/count($tabNotes);
+
+echo "la moyenne des notes est : ", " " , $moyenne;
+
+**************************************************************************
+**************************************************************************

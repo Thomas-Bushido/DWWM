@@ -1,0 +1,220 @@
+
+Fonction:
+*********
+
+// 1 - Écrire une fonction qui permet de calculer le prix TTC en fonction du prix HT, le nombre d’articles et le taux de tva.
+function calculTTC($prix, $nbArticles, $tva)
+{
+    $totalHT = $nbArticles * $prix;
+    $totalTTC = $totalHT * (1 + ($tva / 100));
+
+    return $totalTTC;
+}
+
+
+// 2 - Écrire une fonction qui calcul le PGCD
+function pgcd($n1, $n2)
+{
+    // Euclide's way
+    // Start by dividing highest number with lowest number
+    // Then divide the lowest number of the previous division with the remainder
+    // When the remainder is null, the highest number of the previous division is the GCD
+    $reste = 0;
+
+    do {
+        $reste = $n1 % $n2;
+
+        $n1 = $n2;
+        $n2 = $reste;
+    } while ($reste != 0);
+
+    return $n1;
+}
+
+
+// 3 - Écrire une fonction qui calcul le PPCM
+function ppcm($n1, $n2)
+{
+    $pgcd = pgcd($n1, $n2);
+    return ($n1 * $n2) / $pgcd;
+}
+
+
+// 4 - Écrire une fonction qui calcul et affiche la table de multiplication d’un nombre entré par l’utilisateur
+function tableMulti($n1)
+{
+    $tab = [];
+    for ($i = 0; $i <= 10; $i++) {
+        array_push($tab, $i * $n1);
+    }
+    return $tab;
+}
+
+
+// 5 - Écrire une fonction qui calcul la factorielle d’un nombre entré par l’utilisateur et l’affiche
+function factorielle($n1)
+{
+    $total = 1;
+    for ($i = 1; $i <= $n1; $i++) {
+        $total *= $i;
+    }
+
+    return $total;
+}
+
+
+// 6 - Écrire une fonction qui calcul la somme des valeurs d’un tableau (déjà rempli) 
+// /!\ Ca n'a pas trop de sens vu que l'on a déjà array_sum()
+function sommeTableau($arr)
+{
+    return array_sum($arr);
+}
+
+// 7 - Écrire une fonction qui demande le nombre de ligne et affiche un triangle isocèle
+function afficherTriangleIsocèle($size, $char = "*")
+{
+    // Génération du triangle
+    for ($i = 1; $i <= $size; $i++) {
+        $halfSize = ceil($size / 2);
+        // Si nous sommes dans la première moitié du triangle, on utilise une boucle for croissante
+        // Sinon on utilise une boucle for décroissante
+        if ($i <= $halfSize) {
+            for ($j = 0; $j < $i; $j++) {
+                echo $char;
+            }
+        } else {
+            for ($j = $size - $i + 1; $j > 0; $j--) {
+                echo $char;
+            }
+        }
+        // On passe à la ligne pour préparer l'affichage de la prochaine ligne
+        echo PHP_EOL;
+    }
+}
+
+
+// Helper functions
+function getNumberBetweenBounds($lowerBound, $upperBound, $text)
+{
+    // Only get a number bellow the upperBound
+    if ($lowerBound === null) {
+        $numToCheck = readline($text);
+        while ($numToCheck > $upperBound || !is_numeric($numToCheck)) {
+            $numToCheck = readline($text);
+        }
+    }
+    // Only get a number greater than the lowerBound
+    else if ($upperBound === null) {
+        $numToCheck = readline($text);
+        while ($numToCheck < $lowerBound || !is_numeric($numToCheck)) {
+            $numToCheck = readline($text);
+        }
+    }
+    // Get a number between the lower and upper bound 
+    else {
+        $numToCheck = readline($text);
+        while ($numToCheck < $lowerBound || $numToCheck > $upperBound ||!is_numeric($numToCheck)) {
+            $numToCheck = readline($text);
+        }
+    }
+
+    return $numToCheck;
+}
+
+function getNumericValue($text) {
+    $userNum = readline($text);
+    while (!is_numeric($userNum)) {
+        $userNum = readline($text);
+    }
+
+    return $userNum;
+}
+
+******************************************************************************************************************
+******************************************************************************************************************
+
+
+Index :
+*******
+
+
+<?php
+
+require "functions.php";
+
+// Tant que l'utilisateur renvoi 'y', il veut continuer le programme
+$continue = 'y';
+while ($continue === 'y') {
+
+    // Affichage du menu
+    $choice = -1;
+    while ($choice < 1 || $choice > 7) {
+        echo "Que voulez-vous faire ?\n"
+            . "\t1 - Calcul TTC\n"
+            . "\t2 - Calcul du PGCD\n"
+            . "\t3 - Calcul du PPCM\n"
+            . "\t4 - Afficher la table de multiplication d'un nombre\n"
+            . "\t5 - Calcul de la factorielle\n"
+            . "\t6 - Calcul de la somme d'un tableau\n"
+            . "\t7 - Afficher un triangle isocèle\n";
+
+        $choice = readline("Votre choix : ");
+    }
+
+    // On effectue l'action pour le choix spécifié par l'utilisateur
+    switch ($choice) {
+        // Calcul du prix TTC à partir du prix, de la quantité et de la TVA donné par un utilisateur
+        case 1:
+            $prix = readline("Entrez un prix HT : ");
+            $quantite = readline("Entrez le nombre d'articles : ");
+            $tva = readline("Entrez la TVA : ");
+            echo "Prix TTC : " . calculTTC($prix, $quantite, $tva) . "\n";
+            break;
+        // Calcul du PGCD de deux nombres donnés par l'utilisateur
+        case 2:
+            $userNum1 = getNumericValue("Veuillez entrer un premier nombre : ");
+            $userNum2 = getNumericValue("Veuillez entrer un deuxième nombre : ");
+            echo "PGCD($userNum1, $userNum2) = " . pgcd($userNum1, $userNum2) . "\n";
+            break;
+        // Calcul du PPCM de deux nombres donnés par l'utilisateur
+        case 3:
+            $userNum1 = getNumericValue("Veuillez entrer un premier nombre : ");
+            $userNum2 = getNumericValue("Veuillez entrer un deuxième nombre : ");
+            echo "PPCM($userNum1, $userNum2) = " . ppcm($userNum1, $userNum2) . "\n";
+            break;
+        // Affichage de la table de multiplication d'un nombre donné par l'utilisateur
+        case 4:
+            $userNum = getNumericValue("Veuillez entrer un nombre : ");
+            $tableMulti = tableMulti($userNum);
+            echo "Table de multiplication de $userNum\n";
+            for ($i = 1; $i < count($tableMulti); $i++) {
+                echo "\t $i * $userNum = $tableMulti[$i]\n";
+            }
+            break;
+        // Calcul de la factorielle d'un nombre donné par l'utilisateur
+        case 5:
+            $userNum = getNumberBetweenBounds(0, null, "Veuillez entrer un nombre positif : ");
+            echo "$userNum! = " . factorielle($userNum) . "\n";
+            break;
+        // Somme des valeurs d'un tableau créé par un utilisateur
+        case 6:
+            $arrSize = getNumberBetweenBounds(1, null, "Entrez la taille du tableau : ");
+            $arr = [];
+            for ($i = 0; $i < $arrSize; $i++) {
+                array_push($arr, getNumericValue("Valeur du nombre " . $i + 1 . " : "));
+            }
+            echo "Total : " . array_sum($arr) . "\n";
+            break;
+        // Affichage d'un triangle isocèle, d'une taille choisie par l'utilisateur
+        case 7:
+            $size = getNumberBetweenBounds(3, null, "Taille du triangle : (=>3)");
+            $char = readline("Caractère pour dessiner le triangle : ");
+            afficherTriangleIsocèle($size, $char);
+            break;
+        default:
+            echo "ERROR: Choix invalide\n";
+    }
+
+    $continue = strtolower(readline("Voulez-vous retourner sur le menu ? (y/N) "));
+}
+
